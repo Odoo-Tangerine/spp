@@ -1,0 +1,25 @@
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top d-flex align-items-center header-transparent">
+    <div class="container d-flex align-items-center justify-content-between">
+        <div class="logo">
+            <h1><a href="{{ url_for('index.home') }}">TeSin</a></h1>
+        </div>
+        <div id="oauth" class="oauth">
+            {% if session.get('user') and '__name' in session.get('user') %}
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <a href="{{ url_for('users.profile') }}">
+                            <i class="ri-user-6-line"></i>
+                            <span>{{ session.user.__name }}</span>
+                        </a>
+                    </div>
+                </div>
+            {% else %}
+                <ul>
+                    <li><a href="{{ url_for('users.sign_in') }}">Sign In</a></li>
+                    <li><a class="btn-sign-up" href="{{ url_for('users.sign_up') }}">Sign Up</a></li>
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+</header><!-- End Header -->

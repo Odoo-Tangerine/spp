@@ -1,0 +1,40 @@
+<div class="modal fade" id="upload-face-modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Hộp thoại thêm hình ảnh khuôn mặt</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body modal-register-service">
+                <form class="upload-face-form">
+                    <div class="row py-2">
+                        <div class="col-12">
+                            <label for="image-face" class="upload-face-container">
+                                <span class="drop-title">Tải lên hình ảnh khuôn mặt nhận diện</span>
+                                <input type="file"
+                                       id="image-face"
+                                       name="face_image_single"
+                                       accept=".png, .jpeg, .jpg"
+                                       required
+                                       autocomplete="off"
+                                >
+                            </label>
+                        </div>
+                        <div class="col-12 py-2">
+                            <div class="input-group">
+                                <div class="input-group-text">
+                                    <i class="ri-sketching"></i>
+                                </div>
+                                <input type="text" class="form-control" name="face_image_name_single" placeholder="Nhập tên nhận diện" required>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                <button type="button" class="btn btn-upload-image">Xác nhận</button>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,198 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ session.user.__name }}{% endblock title %}
+
+{% block content %}
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center header-transparent">
+        <div class="container d-flex align-items-center justify-content-between">
+            <div class="logo">
+                <h1><a href="{{ url_for('index.home') }}">TaSin</a></h1>
+            </div>
+            <div id="oauth" class="oauth">
+                {% if session.get('user') and '__name' in session.get('user') %}
+                    <div class="row align-items-center">
+                        <div class="col-9">
+                            <a href="{{ url_for('users.profile') }}">
+                                <i class="ri-user-6-line"></i>
+                                <span>{{ session.user.__name }}</span>
+                            </a>
+                        </div>
+                        <div class="col-3">
+                            <i class="ri-notification-line"></i>
+                        </div>
+                    </div>
+                {% else %}
+                    <ul>
+                        <li><a href="{{ url_for('users.sign_in') }}">Sign In</a></li>
+                        <li><a class="btn-sign-up" href="{{ url_for('users.sign_up') }}">Sign Up</a></li>
+                    </ul>
+                {% endif %}
+            </div>
+        </div>
+    </header><!-- End Header -->
+
+{% if session.get('user') and '__name' in session.get('user') %}
+    <section id="profile-info" class="d-flex flex-column justify-content-end align-items-center">
+        <div class="container profile-container">
+            <div class="row">
+                <div class="col-6">
+                    <h2>{{ session.user.__name }}</h2>
+                    <h5>{{ session.user.__username }}</h5>
+                </div>
+                <div class="col-6">
+                    <button>heaonocn</button>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}
+
+    <section id="profile-content" class="profile-content">
+        <div class="container">
+            <ul class="nav nav-tabs row d-flex">
+                <li class="nav-item col-3" data-aos="zoom-in">
+                    <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">
+                        <i class="ri-red-packet-line"></i>
+                        <h4 class="d-none d-lg-block">Gói hiện tại</h4>
+                    </a>
+                </li>
+                <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="100">
+                    <a class="nav-link" data-bs-toggle="tab" href="#tab-2">
+                        <i class="ri-arrow-left-right-line"></i>
+                        <h4 class="d-none d-lg-block">Lịch sử ra/vào</h4>
+                    </a>
+                </li>
+                <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="200">
+                    <a class="nav-link" data-bs-toggle="tab" href="#tab-3">
+                        <i class="ri-user-4-line"></i>
+                        <h4 class="d-none d-lg-block">Ảnh khuôn mặt</h4>
+                    </a>
+                </li>
+                <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="300">
+                    <a class="nav-link" data-bs-toggle="tab" href="#tab-4">
+                        <i class="ri-taxi-line"></i>
+                        <h4 class="d-none d-lg-block">Ảnh biển số</h4>
+                    </a>
+                </li>
+            </ul>
+            <div class="tab-content mt-5" data-aos="fade-up">
+                <div class="tab-pane active show" id="tab-1">
+                    {% if profile and profile.get('current_package') %}
+                        {% set packages = profile.get('current_package') %}
+                        {% for package in packages %}
+                            <div class="row profile-package-row shadow-lg bg-body rounded mb-3">
+                                <div class="col-4 profile-package-col-4 rounded-start-3">
+                                    <div class="row text-center p-4">
+                                        <i class="ri-taxi-line text"></i>
+                                        <h1 class="text">{{ package.name }}</h1>
+                                        <h4 class="text">{{ "{:,.0f}".format(package.price) }} <span>&#8363;</span></h4>
+                                    </div>
+                                </div>
+                                <div class="col-8 profile-package-col-8 rounded-end-3">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <ul>
+                                            <li>
+                                                Trạng thái: {{ package.state }}
+                                            </li>
+                                            <li>
+                                                Ngày bắt đầu: {{ package.start_date }}
+                                            </li>
+                                            <li>
+                                                Ngày hết hạn: {{ package.expire_date }}
+                                            </li>
+                                            <li>
+                                                Biển số đăng ký: {{ package.license_plate }}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6">
+                                        <ul>
+                                            {% for description in package.package_description %}
+                                                <li>
+                                                    <i class="ri-check-double-line"></i>
+                                                    {{ description }}
+                                                </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <h1>Bạn chưa đăng ký bất ký gói nào</h1>
+                        Vui lòng nhấn vào đây để đăng ký
+                    {% endif %}
+                </div>
+
+                <div class="tab-pane" id="tab-2">
+                    <div class="row">
+                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                            <h3>Không còn cần tìm kiếm vé giữ xe hoặc đứng xếp hàng chờ đợi.</h3>
+                            <p class="fst-italic">
+                                TaSin xác thực xe theo bằng công nghệ nhận diện tiên tiến, giúp bạn ra vào bãi đỗ một cách dễ dàng và nhanh chóng, chỉ cần vài giây để hoàn tất quy trình.
+                            </p>
+                            <ul>
+                                <li><i class="ri-check-double-line"></i> Không dùng vé mỗi lần ra vào để hạn chế mất và khách hàng phải ghi nhớ việc giữ chúng.</li>
+                                <li><i class="ri-check-double-line"></i> Quy trình đăng ký giữ xe tiên tiến, giúp bạn tiết kiệm nhiều thời gian hơn.</li>
+                                </ul>
+                        </div>
+                        <div class="col-lg-6 order-1 order-lg-2 text-center">
+                            <img src="{{ url_for('static', filename='assets/img/features-2.png' )}}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab-3">
+                    <div class="row">
+                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                            <h3>Voluptatibus commodi ut accusamus ea repudiandae ut autem dolor ut assumenda</h3>
+                            <p>
+                                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                culpa qui officia deserunt mollit anim id est laborum
+                            </p>
+                            <ul>
+                                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                                <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                                <li><i class="ri-check-double-line"></i> Provident mollitia neque rerum asperiores dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</li>
+                            </ul>
+                            <p class="fst-italic">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                                magna aliqua.
+                            </p>
+                        </div>
+                        <div class="col-lg-6 order-1 order-lg-2 text-center">
+                            <img src="{{ url_for('static', filename='assets/img/features-3.png' )}}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab-4">
+                    <div class="row">
+                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                            <h3>Omnis fugiat ea explicabo sunt dolorum asperiores sequi inventore rerum</h3>
+                            <p>
+                                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                culpa qui officia deserunt mollit anim id est laborum
+                            </p>
+                            <p class="fst-italic">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                                magna aliqua.
+                            </p>
+                            <ul>
+                                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                                <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 order-1 order-lg-2 text-center">
+                            <img src="{{ url_for('static', filename='assets/img/features-4.png' )}}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </section><!-- End Features Section -->
+{% endblock %}

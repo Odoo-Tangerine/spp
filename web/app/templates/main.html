@@ -1,0 +1,370 @@
+<main id="main">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title" data-aos="zoom-out">
+                <h2>Giới Thiệu</h2>
+                <p>Về chúng tôi</p>
+            </div>
+            <div class="row content" data-aos="fade-up">
+                <div class="col-lg-6">
+                    <p>
+                        Chúng tôi là những người trẻ tràn đầy đam mê với công nghệ, những sinh viên đại học đam mê sáng tạo và nỗ lực để tạo ra TaSin - Giải pháp Bãi Giữ Xe Thông Minh. Dự án này không chỉ là một mục tiêu nghiên cứu, mà còn là sứ mệnh của chúng tôi để tối ưu thời gian hàng ngày của mọi người trong việc gửi xe. Với các tiêu chí:
+                    </p>
+                    <ul>
+                        <li><i class="ri-check-double-line"></i> Tối ưu thời gian</li>
+                        <li><i class="ri-check-double-line"></i> Tiết kiệm chi phí</li>
+                        <li><i class="ri-check-double-line"></i> An toàn và bảo mật</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 pt-4 pt-lg-0">
+                    <h3>Tại sao chúng tôi tạo ra TaSin?</h3>
+                    <p>
+                        Chúng tôi tin rằng công nghệ không chỉ là một công cụ, mà còn là một cách để nâng cao chất lượng cuộc sống. TaSin ra đời từ sự tự đặt ra câu hỏi "Làm thế nào chúng ta có thể làm cho việc giữ xe trở nên dễ dàng hơn, an toàn hơn và thân thiện hơn với môi trường?".
+                        Chúng tôi tự hào được tham gia vào cuộc cách mạng công nghệ và hy vọng rằng TaSin sẽ đóng góp vào việc biến điều này thành hiện thực. Điều quan trọng hơn, chúng tôi mong muốn thấy TaSin làm cho cuộc sống của bạn trở nên tiện lợi hơn mỗi ngày.
+                    </p>
+                    <a href="#contact" class="btn-learn-more">Liên hệ ngay với chúng tôi để nhận thêm thông tin</a>
+                </div>
+            </div>
+        </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Features Section ======= -->
+    <section id="features" class="features">
+        <div class="container">
+            <ul class="nav nav-tabs row d-flex">
+                <li class="nav-item col-3" data-aos="zoom-in">
+                    <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">
+                        <i class="ri-shield-keyhole-line"></i>
+                        <h4 class="d-none d-lg-block">An toàn và Bảo mật</h4>
+                    </a>
+                </li>
+                <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="100">
+                    <a class="nav-link" data-bs-toggle="tab" href="#tab-2">
+                        <i class="ri-flashlight-line"></i>
+                        <h4 class="d-none d-lg-block">Tiện lợi và Nhanh chóng</h4>
+                    </a>
+                </li>
+                <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="200">
+                    <a class="nav-link" data-bs-toggle="tab" href="#tab-3">
+                        <i class="ri-24-hours-line"></i>
+                        <h4 class="d-none d-lg-block">Hệ thống tự động</h4>
+                    </a>
+                </li>
+                <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="300">
+                    <a class="nav-link" data-bs-toggle="tab" href="#tab-4">
+                        <i class="ri-brain-line"></i>
+                        <h4 class="d-none d-lg-block">Quản lý thông minh</h4>
+                    </a>
+                </li>
+            </ul>
+
+            <div class="tab-content" data-aos="fade-up">
+                <div class="tab-pane active show" id="tab-1">
+                    <div class="row">
+                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                            <h3>Công nghệ nhận diện khuôn mặt và biển số xe thời gian thực</h3>
+                            <p class="fst-italic">
+                                TaSin sử dụng công nghệ nhận diện khuôn mặt để xác định người sở hữu xe và biển số xe theo thời gian thực để xác minh thông tin xe. Điều này đảm bảo rằng xe của bạn được bảo vệ tốt nhất và chỉ có người có quyền mới có thể ra hoặc vào bãi giữ xe.
+                            </p>
+                            <ul>
+                                <li><i class="ri-check-double-line"></i> Dữ liệu khuôn mặt và biển số sẽ được thu thập khi đăng ký dịch vụ.</li>
+                                <li><i class="ri-check-double-line"></i> Dữ liệu sẽ được mã hóa trước khi lưu trữ.</li>
+                                <li><i class="ri-check-double-line"></i> Trích xuất và nhận diện tự động.</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 order-1 order-lg-2 text-center">
+                            <img src="{{ url_for('static', filename='assets/img/feature-1.jpeg' )}}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab-2">
+                    <div class="row">
+                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                            <h3>Không còn cần tìm kiếm vé giữ xe hoặc đứng xếp hàng chờ đợi.</h3>
+                            <p class="fst-italic">
+                                TaSin xác thực xe theo bằng công nghệ nhận diện tiên tiến, giúp bạn ra vào bãi đỗ một cách dễ dàng và nhanh chóng, chỉ cần vài giây để hoàn tất quy trình.
+                            </p>
+                            <ul>
+                                <li><i class="ri-check-double-line"></i> Không dùng vé mỗi lần ra vào để hạn chế mất và khách hàng phải ghi nhớ việc giữ chúng.</li>
+                                <li><i class="ri-check-double-line"></i> Quy trình đăng ký giữ xe tiên tiến, giúp bạn tiết kiệm nhiều thời gian hơn.</li>
+                                </ul>
+                        </div>
+                        <div class="col-lg-6 order-1 order-lg-2 text-center">
+                            <img src="{{ url_for('static', filename='assets/img/features-2.png' )}}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab-3">
+                    <div class="row">
+                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                            <h3>Voluptatibus commodi ut accusamus ea repudiandae ut autem dolor ut assumenda</h3>
+                            <p>
+                                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                culpa qui officia deserunt mollit anim id est laborum
+                            </p>
+                            <ul>
+                                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                                <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                                <li><i class="ri-check-double-line"></i> Provident mollitia neque rerum asperiores dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</li>
+                            </ul>
+                            <p class="fst-italic">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                                magna aliqua.
+                            </p>
+                        </div>
+                        <div class="col-lg-6 order-1 order-lg-2 text-center">
+                            <img src="{{ url_for('static', filename='assets/img/features-3.png' )}}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane" id="tab-4">
+                    <div class="row">
+                        <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+                            <h3>Omnis fugiat ea explicabo sunt dolorum asperiores sequi inventore rerum</h3>
+                            <p>
+                                Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                                velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                                culpa qui officia deserunt mollit anim id est laborum
+                            </p>
+                            <p class="fst-italic">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                                magna aliqua.
+                            </p>
+                            <ul>
+                                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
+                                <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
+                                <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-6 order-1 order-lg-2 text-center">
+                            <img src="{{ url_for('static', filename='assets/img/features-4.png' )}}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </section><!-- End Features Section -->
+
+    <!-- ======= Pricing Section ======= -->
+    {% if info and info.get('product_ids') %}
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="section-title" data-aos="zoom-out">
+                <h2>Dịch vụ</h2>
+                <p>Các gói dịch vụ của chúng tôi</p>
+            </div>
+            <div class="row">
+                {%  for product in info.get('product_ids') %}
+                <div class="col-lg-3 col-md-6">
+                    <div class="box" data-aos="zoom-in">
+                        {% if product.product_priority | int > 0 %}
+                            <span class="advanced">Best sale</span>
+                        {% endif %}
+                        <div class="box-title">
+                            <h3 class="service-name">{{ product.product_name}}</h3>
+                            <span class="service-duration d-none">{{ product.product_duration }}</span>
+                            <span class="service-slot d-none">{{ product.product_slot }}</span>
+                            <input type="hidden" value="{{ product.product_id }}" class="service-id" name="service_id">
+                        </div>
+                        <div class="container-box">
+                            <div class="box-price d-flex justify-content-center">
+                                <h4 class="service-price">{{ "{:,.0f}".format(product.product_price) }}</h4>
+                                <span>&#8363;</span>
+                            </div>
+                            <ul>
+                                {% for description in product.product_description %}
+                                    <li>
+                                        <i class="ri-check-double-line"></i>
+                                        {{ description }}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                            <div class="btn-wrap">
+                                <button class="btn-register-now">Đăng ký ngay</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section><!-- End Pricing Section -->
+    {% endif %}
+
+    <!-- ======= F.A.Q Section ======= -->
+    <section id="faq" class="faq">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-out">
+          <h2>Câu hỏi thường gặp</h2>
+          <p>Các câu hỏi thường gặp và phản hồi từ chúng tôi</p>
+        </div>
+
+        <ul class="faq-list">
+
+          <li>
+            <div data-bs-toggle="collapse" class="collapsed question" href="#faq1">Non consectetur a erat nam at lectus urna duis? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq1" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq2" class="collapsed question">Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq2" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq3" class="collapsed question">Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq3" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq4" class="collapsed question">Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq4" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq5" class="collapsed question">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq5" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
+              </p>
+            </div>
+          </li>
+
+          <li>
+            <div data-bs-toggle="collapse" href="#faq6" class="collapsed question">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bi bi-chevron-down icon-show"></i><i class="bi bi-chevron-up icon-close"></i></div>
+            <div id="faq6" class="collapse" data-bs-parent=".faq-list">
+              <p>
+                Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.
+              </p>
+            </div>
+          </li>
+
+        </ul>
+
+      </div>
+    </section><!-- End F.A.Q Section -->
+
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+        <div class="container">
+            <div class="section-title" data-aos="zoom-out">
+                <h2>Team</h2>
+                <p>Our Hardworking Team</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="fade-up">
+                        <div class="member-img">
+                            <img src="{{ url_for('static', filename='assets/img/team/team-1.jpg') }}" class="img-fluid" alt="">
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Walter White</h4>
+                            <span>Chief Executive Officer</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+                    <div class="member" data-aos="fade-up" data-aos-delay="100">
+                        <div class="member-img">
+                            <img src="{{ url_for('static', filename='assets/img/team/team-2.jpg') }}" class="img-fluid" alt="">
+                            <div class="social">
+                                <a href=""><i class="bi bi-twitter"></i></a>
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Sarah Jhonson</h4>
+                            <span>Product Manager</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- End Team Section -->
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title" data-aos="zoom-out">
+                <h2>Contact</h2>
+                <p>Contact Us</p>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-4" data-aos="fade-right">
+                    <div class="info">
+                        <div class="address">
+                            <i class="bi bi-geo-alt"></i>
+                            <h4>Location:</h4>
+                            <p>A108 Adam Street, New York, NY 535022</p>
+                        </div>
+
+                        <div class="email">
+                            <i class="bi bi-envelope"></i>
+                            <h4>Email:</h4>
+                            <p>info@example.com</p>
+                        </div>
+
+                        <div class="phone">
+                            <i class="bi bi-phone"></i>
+                            <h4>Call:</h4>
+                            <p>+1 5589 55488 55s</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
+                    <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="col-md-6 form-group mt-3 mt-md-0">
+                                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group mt-3">
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                        </div>
+                        <div class="form-group mt-3">
+                            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                        </div>
+                        <div class="my-3">
+                            <div class="loading">Loading</div>
+                            <div class="error-message"></div>
+                            <div class="sent-message">Your message has been sent. Thank you!</div>
+                        </div>
+                        <div class="text-center"><button type="submit">Send Message</button></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->

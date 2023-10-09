@@ -1,0 +1,66 @@
+{% extends '/users/main.html' %}
+
+{% block title %}Sign In{% endblock title %}
+{% block user_content %}
+    <div class="row justify-content-center">
+        <div class="col-lg-4">
+            <div class="bg-white shadow rounded">
+                <div class="row">
+                    <div class="col-md-12 pe-0">
+                        <div class="form-left h-100 py-5 px-5">
+                            <div class="row">
+                                <div class="col-12 text-center py-2">
+                                    <h1>
+                                        <i class="ri-login-circle-line"></i>
+                                    </h1>
+                                    <h3>Welcome Back</h3>
+                                </div>
+                            </div>
+                            <form action="{{ url_for('users.sign_in') }}" method="POST" class="row">
+                                {{ sign_in_form.csrf_token }}
+                                <div class="col-12 py-2">
+                                    <div class="input-group">
+                                        <div class="input-group-text">
+                                            <i class="ri-at-line"></i>
+                                        </div>
+                                        {{ sign_in_form.email(class="form-control") }}
+                                    </div>
+                                </div>
+
+                                <div class="col-12 py-2">
+                                    <div class="input-group">
+                                        <div class="input-group-text">
+                                            <i class="ri-lock-line"></i>
+                                        </div>
+                                        {{ sign_in_form.password(class="form-control") }}
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 py-2">
+                                    <div class="form-check">
+                                        {{ sign_in_form.remember_me(class="form-check-input", id="inlineFormCheck") }}
+                                        <label class="form-check-label" for="inlineFormCheck">Remember me</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-sm-6 py-2">
+                                    <a href="{{ url_for('users.forgot_password') }}" class="float-end">Forgot password?</a>
+                                </div>
+
+                                <div class="col-12 py-2">
+                                    {{ sign_in_form.submit(string='Sign In', class="btn btn-sign-in") }}
+{#                                    <button type="submit" class="">Sign In</button>#}
+                                </div>
+
+                                <div class="col-12 py-2">
+                                    <span>Don't have an account?</span>
+                                    <a href="{{ url_for('users.sign_up') }}">Sign Up</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock user_content %}
