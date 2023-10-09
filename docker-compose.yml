@@ -1,0 +1,43 @@
+version: '3.8'
+services:
+#  flask:
+#    container_name: flask_spp
+#    build:
+#      context: .
+#      dockerfile: web/Dockerfile
+#    restart: always
+#    ports:
+#      - 5000:5000
+#    networks:
+#      - spp_network
+#    image: web
+#    volumes:
+#      - ./web/app:/web/app
+#    expose:
+#      - 5000
+#
+#  proxy:
+#    container_name: proxy_spp
+#    build:
+#      context: .
+#      dockerfile: proxy/Dockerfile
+#    restart: always
+#    ports:
+#      - 80:80
+#    networks:
+#      - spp_network
+#    expose:
+#      - 80
+
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    networks:
+      - spp_network
+    volumes:
+      - db:/var/lib/postgresql/data
+networks:
+  spp_network:
+    driver: bridge

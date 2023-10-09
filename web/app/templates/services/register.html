@@ -1,0 +1,89 @@
+<div class="modal fade" id="register-service-pack" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <form action="{{ url_for('services.register_service') }}" method="POST" enctype="multipart/form-data">
+            <input type="hidden" class="service-id" name="service_id">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">
+                        {% if session.user %}
+                            Xin chào, {{ session.user.__name }} -
+                        {% endif %}
+                        Cổng đăng ký gói dịch vụ đỗ xe</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body modal-register-service">
+                    <div class="row justify-content-center text-center align-items-center py-2">
+                        <div class="col-6">
+                            <h2 class="service-name"></h2>
+                        </div>
+                        <div class="col-6">
+                            <div class="input-group">
+                                <div class="input-group-text">
+                                    <i class="ri-arrow-up-down-fill"> Số lượng</i>
+                                </div>
+                                <input type="number" name="service_quantity" value="1" min="0" class="form-control" aria-label="Quantity">
+                                <div class="input-group-text">gói</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row py-2">
+                        {% for i in range(1, 5) %}
+                            <div class="col-3 upload-face-box">
+                                <label class="upload-face-container face-box" id="image-{{ i }}">
+                                    <i class="ri-image-add-line position-absolute top-50 start-50 translate-middle fs-1"></i>
+                                </label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="row py-2">
+                        <div class="col-12 upload-lp-box">
+                            <label for="photo-license-plate" class="upload-lp-container">
+                                <span class="drop-title">Tải lên hình ảnh biển số xe</span>
+                                <input type="file"
+                                       id="photo-license-plate"
+                                       name="license_plate_image[]"
+                                       accept=".png, .jpeg, .jpg"
+                                       required
+                                       autocomplete="off"
+                                >
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row justify-content-start text-start py-2">
+                        <div class="col-12">
+                            <ul>
+                                <li>
+                                    <i class="ri-check-double-line"></i>
+                                    Áp dụng cho <span class="description-slot"></span> chỗ đỗ xe
+                                </li>
+                                <li>
+                                    <i class="ri-check-double-line"></i>
+                                    <span class="description-duration"></span> ngày sử dụng dịch vụ
+                                </li>
+                                <li>
+                                    <i class="ri-check-double-line"></i>
+                                    Ứng dụng công nghệ nhận diện khuôn mặt
+                                </li>
+                                <li>
+                                    <i class="ri-check-double-line"></i>
+                                    Ứng dụng công nghệ nhận diện biển số xe
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="row end-box justify-content-end text-end py-2">
+                        <div class="col-6">
+                            <span>Tổng: </span>
+                            <span class="service-total"></span>
+                            <span>&#8363;</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+                    <button type="submit" class="btn btn-register-service">Đăng ký</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

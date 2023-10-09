@@ -1,0 +1,49 @@
+{% for category, message in get_flashed_messages(with_categories=true) %}
+    <div class="toast toast-{{ category }}">
+        <div class="toast-content toast-content-{{ category }}">
+            {% if category == 'success' %}
+                <i class="ri-checkbox-circle-line"></i>
+            {% elif category == 'warning' %}
+                <i class="ri-triangle-line"></i>
+            {% elif category == 'error' %}
+                <i class="ri-error-warning-line"></i>
+            {% endif %}
+            <div class="message">
+                <h5 class="title">{{ category }}</h5>
+                <span class="description">{{ message }}</span>
+            </div>
+        </div>
+        <div class="progress progress-{{ category }}"></div>
+    </div>
+    <script>
+        const toast = document.querySelector(".toast");
+        const progress = document.querySelector(".progress");
+
+        let timerToast, timerProcess;
+
+        toast.classList.add("active");
+        toast.classList.add("show");
+        progress.classList.add("active");
+
+        timerToast = setTimeout(() => {
+          toast.classList.remove("active");
+          toast.classList.remove("show");
+        }, 5000);
+
+        timerProcess = setTimeout(() => {
+          progress.classList.remove("active");
+        }, 5300);
+
+        toast.addEventListener("click", () => {
+          toast.classList.remove("active");
+          toast.classList.remove("show");
+
+          setTimeout(() => {
+            progress.classList.remove("active");
+          }, 300);
+
+          clearTimeout(timerToast);
+          clearTimeout(timerProcess);
+        });
+    </script>
+{% endfor %}
